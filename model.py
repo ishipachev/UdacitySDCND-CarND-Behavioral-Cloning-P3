@@ -69,7 +69,7 @@ def nvidia_network():
     model.add(Dense(1))
     return model
 
-
+#Reading collected training data from folders with pictures
 samples = read_samples('data_collected/try1') + \
           read_samples('data_collected/try2') + \
           read_samples('data_collected/try3_restore') + \
@@ -89,5 +89,5 @@ model.fit_generator(train_generator,
                     nb_val_samples=len(validation_samples)*2,
                     nb_epoch=3)
 
-model.save('output/aug_model.h5')
+model.save('model_fd.h5')
 
